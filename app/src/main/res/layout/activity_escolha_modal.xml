@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".EscolhaModal">
+
+
+    <TextView
+        android:id="@+id/saudacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="Olá, qual o seu meio de trasporte hoje?"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="483dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saudacoes">
+
+        <ImageView
+            android:id="@+id/imageCarro"
+            android:layout_width="173dp"
+            android:layout_height="155dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/carro" />
+
+        <ImageView
+            android:id="@+id/imageAndando"
+            android:layout_width="163dp"
+            android:layout_height="157dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/andando" />
+
+        <ImageView
+            android:id="@+id/imageOnibus"
+            android:layout_width="178dp"
+            android:layout_height="149dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/onibus" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="483dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/saudacoes">
+
+        <ImageView
+            android:id="@+id/imageBike"
+            android:layout_width="158dp"
+            android:layout_height="149dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/bicicleta" />
+
+        <ImageView
+            android:id="@+id/imageMoto"
+            android:layout_width="163dp"
+            android:layout_height="178dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/moto" />
+
+        <ImageView
+            android:id="@+id/imagePatinete"
+            android:layout_width="151dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/patinete" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        app:backgroundTint="@color/botoes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_seta"
+        tools:ignore="VectorDrawableCompat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
