@@ -76,7 +76,7 @@ public class ConexaoBluetooth extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Conectando...", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), TelaPrincipal.class);
                 //intent.putExtra("address", String.valueOf(btArray[i]));
-                //Log.e(TAG, "My bt adress is:" + String.valueOf(btArray[i]));
+                Log.e(TAG, "My bt adress is:" + String.valueOf(btArray[i]));
                 startActivity(intent);
             }
 
