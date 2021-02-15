@@ -1,18 +1,26 @@
 package com.example.smartmobilitypro;
 
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+
+import java.io.IOException;
+import java.util.UUID;
 
 
 /**
@@ -22,8 +30,13 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
 
     private Button buttonRota;
     private GoogleMap mMap;
+    private static String address;
 
-        public MapaFragment() {
+   public static void setBtAddress(String newAddress){
+        address = newAddress;
+    }
+
+    public MapaFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +56,7 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
                 if(buttonRota.getText() == "Iniciar rota"){
                     buttonRota.setText("Encerrar rota");
                     ConexaoBluetooth conexao = new ConexaoBluetooth();
-                    conexao.iniciarColeta();
+                    conexao.iniciarColeta(address);
 
                 } else {
                     buttonRota.setText("Iniciar rota");

@@ -24,6 +24,10 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
 
+    private BluetoothAdapter btAdapter;
+    BluetoothSocket btSocket;
+    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,31 @@ public class TelaPrincipal extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(bottmNavMethod);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new MapaFragment()).commit();
+
+        /*btAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String dado = extras.getString("address");
+            BluetoothDevice device = btAdapter.getRemoteDevice(dado);
+
+            try {
+                btSocket = device.createRfcommSocketToServiceRecord(MY_UUID);
+            } catch (IOException e) {
+                Toast.makeText(getBaseContext(), "Socket creation failed", Toast.LENGTH_LONG).show();
+            }
+            // Establish the Bluetooth socket connection.
+            try {
+                btSocket.connect();
+                Toast.makeText(getApplicationContext(), "Conectado", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                try {
+                    btSocket.close();
+                } catch (IOException e2) {
+                    //insert code to deal with this
+                }
+            }
+        }*/
 
     }
 
