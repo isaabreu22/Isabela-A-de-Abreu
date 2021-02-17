@@ -33,7 +33,8 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
     private static String address;
 
    public static void setBtAddress(String newAddress){
-        address = newAddress;
+
+       address = newAddress;
     }
 
     public MapaFragment() {
@@ -54,9 +55,9 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onClick(View view) {
                 if(buttonRota.getText() == "Iniciar rota"){
-                    buttonRota.setText("Encerrar rota");
                     ConexaoBluetooth conexao = new ConexaoBluetooth();
                     conexao.iniciarColeta(address);
+                    buttonRota.setText("Encerrar rota");
 
                 } else {
                     buttonRota.setText("Iniciar rota");

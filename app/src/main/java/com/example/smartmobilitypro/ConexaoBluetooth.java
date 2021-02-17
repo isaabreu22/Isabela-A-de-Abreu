@@ -142,7 +142,8 @@ public class ConexaoBluetooth extends AppCompatActivity {
                 try {
                     bytes = mmInStream.read(buffer);            //read bytes from input buffer
                     String readMessage = new String(buffer, 0, bytes);
-                    Log.e(TAG, readMessage);
+                    MainActivity.setMessage(readMessage);
+                    //Log.d(TAG, readMessage);
                 } catch (IOException e) {
                     break;
                 }
@@ -164,10 +165,10 @@ public class ConexaoBluetooth extends AppCompatActivity {
             }
 
             try {
-                //Log.e(TAG, "C vai");
+                Log.e(TAG, "C vai");
                 btSocket.connect();
-                //Log.e(TAG, "C foi");
-                //Log.d(TAG, "Conexão estabelecida");
+                Log.e(TAG, "C foi");
+                Log.d(TAG, "Conexão estabelecida");
                 mConnectedThread = new ConnectedThread(btSocket);
                 mConnectedThread.start();
 
